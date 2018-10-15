@@ -11,6 +11,13 @@ namespace L8T1
 {
     class Program
     {
+        /// <summary>
+        /// Метод принимающий объект и строку "наименование свойства" позволяющий получить 
+        /// значение указанного свойства объекта, а также аттртбуты этого свойства
+        /// </summary>
+        /// <param name="obj">Объект в нашем варианте DateTime</param>
+        /// <param name="str"></param>
+        /// <returns></returns>
         static PropertyInfo GetPropertyInfo(object obj, string str)
         {
             return obj.GetType().GetProperty(str);
@@ -27,9 +34,17 @@ namespace L8T1
         {
             DateTime date = DateTime.Now;
                 
-            Console.WriteLine(date); 
-           
+            Console.WriteLine(date);
 
+            PropertyInfo[] myPropertyInfo;
+
+            myPropertyInfo = Type.GetType("System.DateTime").GetProperties();
+            Console.WriteLine("Свойства DateTime :");
+            for (int i = 0; i < myPropertyInfo.Length; i++)
+            {
+                Console.WriteLine(myPropertyInfo[i].ToString());
+            }
+            Console.ReadLine();
             PtintPropertyInfo(date, "DayOfWeek");//Возвращает день недели
             PtintPropertyInfo(date, "Now");//Возвращает объект System.DateTime, которому присвоены 
                                            //текущие дата и время данного компьютера
@@ -52,9 +67,9 @@ namespace L8T1
             PtintPropertyInfo(date, "Year");//Возвращает компонент года даты
 
 
-
+          
             Console.ReadLine();
-
+            
         }
     }
 }
