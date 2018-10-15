@@ -19,7 +19,7 @@ namespace L8T2
         public Form1()
         {
             InitializeComponent();
-            //tBNumEnt.Text = nUD.Value.ToString();
+           
         }
 
         private void nUD_ValueChanged(object sender, EventArgs e)
