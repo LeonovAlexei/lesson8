@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Леонов Алексей
+//Создайте простую форму на котором свяжите свойство Text элемента TextBox 
+//со свойством Value элемента NumericUpDown
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +19,12 @@ namespace L8T2
         public Form1()
         {
             InitializeComponent();
+            //tBNumEnt.Text = nUD.Value.ToString();
+        }
+
+        private void nUD_ValueChanged(object sender, EventArgs e)
+        {
+            tBNumEnt.Text = nUD.Value.ToString();
         }
     }
 }
