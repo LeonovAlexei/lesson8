@@ -43,6 +43,7 @@
             this.nudNumber = new System.Windows.Forms.NumericUpDown();
             this.cboxTrue = new System.Windows.Forms.CheckBox();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             this.miOpenJson,
             this.miSave,
             this.miSaveJson,
+            this.saveAsToolStripMenuItem,
             this.miExit});
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.Size = new System.Drawing.Size(37, 20);
@@ -176,6 +178,13 @@
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveAsToolStripMenuItem.Text = "Save As";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +225,7 @@
         private System.Windows.Forms.ToolStripMenuItem miSaveJson;
         private System.Windows.Forms.ToolStripMenuItem miOpenJson;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
     }
 }
 

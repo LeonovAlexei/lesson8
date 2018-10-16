@@ -170,5 +170,20 @@ namespace BelieveOrNotBelieve
             Version ver = new Version();
             ver.Show();
         }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                
+                database.Save();
+                nudNumber.Minimum = 1;
+                nudNumber.Maximum = database.Count;
+                nudNumber.Value = 1;
+
+            };
+            formTextValk(sfd.FileName);
+        }
     }
 }
