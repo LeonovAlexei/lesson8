@@ -56,23 +56,12 @@ namespace BelieveOrNotBelieve
         }
         public void Load()
         {
-            try
-            {
+           
                 XmlSerializer xmlFormat = new XmlSerializer(typeof(List<Question>));
                 Stream fStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
                 list = (List<Question>)xmlFormat.Deserialize(fStream);
                 fStream.Close();
 
-            }
-            catch (System.InvalidOperationException)
-            {
-                new MessageDialog("Невозможно прочитать файл " + fileName).ShowAsync();
-
-
-            } 
-            
-            
-            
         }
 
        

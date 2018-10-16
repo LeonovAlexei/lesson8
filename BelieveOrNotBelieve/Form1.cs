@@ -36,7 +36,11 @@ namespace BelieveOrNotBelieve
             this.Close();
 
         }
+        private void formTextValk(string fileName)
+        {
+            this.Text = $"Верю - Не верю. Открыт файл:{fileName}";
 
+        }
         private void miNew_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -48,8 +52,9 @@ namespace BelieveOrNotBelieve
                 nudNumber.Minimum = 1;
                 nudNumber.Maximum = 1;
                 nudNumber.Value = 1;
+                
             };
-
+            formTextValk(sfd.FileName);
         }
 
         private void nudNumber_ValueChanged(object sender, EventArgs e)
@@ -90,15 +95,32 @@ namespace BelieveOrNotBelieve
 
         public void miOpen_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == DialogResult.OK)
+            try
             {
-                database = new TrueFalse(ofd.FileName);
-                database.Load();
-                nudNumber.Minimum = 1;
-                nudNumber.Maximum = database.Count;
-                nudNumber.Value = 1;
+                OpenFileDialog ofd = new OpenFileDialog();
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    database = new TrueFalse(ofd.FileName);
+                    database.Load();
+                    nudNumber.Minimum = 1;
+                    nudNumber.Maximum = database.Count;
+                    nudNumber.Value = 1;
+                    
+                }
+                formTextValk(ofd.FileName);
             }
+            catch (InvalidOperationException)//открываем файл отличный от фрмата
+            {
+                MessageBox.Show("Невозможно прочитать файл XML загрузчиком! Пробуйте открыть  файл формата XML", "Сообщение"); 
+                
+                 miOpen_Click(sender, e);
+                // throw;
+            }
+            finally
+            {
+               
+            }
+            
 
         }
 
@@ -117,15 +139,29 @@ namespace BelieveOrNotBelieve
 
         private void miOpenJson_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == DialogResult.OK)
+
+
+            try
             {
-                database = new TrueFalse(ofd.FileName);
-                database.LoadJson();
-                nudNumber.Minimum = 1;
-                nudNumber.Maximum = database.Count;
-                nudNumber.Value = 1;
+                OpenFileDialog ofd = new OpenFileDialog();
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    database = new TrueFalse(ofd.FileName);
+                    database.LoadJson();
+                    nudNumber.Minimum = 1;
+                    nudNumber.Maximum = database.Count;
+                    nudNumber.Value = 1;
+                }
+                formTextValk(ofd.FileName);
             }
+            catch (Newtonsoft.Json.JsonReaderException) //открываем файл отличный от фрмата
+            {
+                MessageBox.Show("Невозможно прочитать файл Json загрузчиком! Пробуйте открыть  файл формата Json", "Сообщение"); //+ ofd.FileName
+
+                miOpenJson_Click(sender, e);
+                //throw;
+            }
+            
         }
     }
 }
