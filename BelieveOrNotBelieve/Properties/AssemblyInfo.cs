@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
 [assembly: AssemblyTitle("BelieveOrNotBelieve")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyDescription("Это Windows-приложение, которое позволяет пользователю создавать базу данных вопросов")]
+[assembly: AssemblyConfiguration("Версия 1.0")]
+[assembly: AssemblyCompany("Leonof © 2018")]
 [assembly: AssemblyProduct("BelieveOrNotBelieve")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]

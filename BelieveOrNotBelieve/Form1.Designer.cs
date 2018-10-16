@@ -32,7 +32,9 @@
             this.ToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.miNew = new System.Windows.Forms.ToolStripMenuItem();
             this.miOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOpenJson = new System.Windows.Forms.ToolStripMenuItem();
             this.miSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSaveJson = new System.Windows.Forms.ToolStripMenuItem();
             this.miExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tboxQuestion = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -40,8 +42,7 @@
             this.btnSaveQuest = new System.Windows.Forms.Button();
             this.nudNumber = new System.Windows.Forms.NumericUpDown();
             this.cboxTrue = new System.Windows.Forms.CheckBox();
-            this.miSaveJson = new System.Windows.Forms.ToolStripMenuItem();
-            this.miOpenJson = new System.Windows.Forms.ToolStripMenuItem();
+            this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumber)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +50,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStrip});
+            this.ToolStrip,
+            this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(567, 24);
@@ -83,12 +85,26 @@
             this.miOpen.Text = "Open";
             this.miOpen.Click += new System.EventHandler(this.miOpen_Click);
             // 
+            // miOpenJson
+            // 
+            this.miOpenJson.Name = "miOpenJson";
+            this.miOpenJson.Size = new System.Drawing.Size(180, 22);
+            this.miOpenJson.Text = "Open Json";
+            this.miOpenJson.Click += new System.EventHandler(this.miOpenJson_Click);
+            // 
             // miSave
             // 
             this.miSave.Name = "miSave";
             this.miSave.Size = new System.Drawing.Size(180, 22);
             this.miSave.Text = "Save";
             this.miSave.Click += new System.EventHandler(this.miSave_Click);
+            // 
+            // miSaveJson
+            // 
+            this.miSaveJson.Name = "miSaveJson";
+            this.miSaveJson.Size = new System.Drawing.Size(180, 22);
+            this.miSaveJson.Text = "Save Json";
+            this.miSaveJson.Click += new System.EventHandler(this.miSaveJson_Click);
             // 
             // miExit
             // 
@@ -153,19 +169,12 @@
             this.cboxTrue.Text = "Правда";
             this.cboxTrue.UseVisualStyleBackColor = true;
             // 
-            // miSaveJson
+            // оПрограммеToolStripMenuItem
             // 
-            this.miSaveJson.Name = "miSaveJson";
-            this.miSaveJson.Size = new System.Drawing.Size(180, 22);
-            this.miSaveJson.Text = "Save Json";
-            this.miSaveJson.Click += new System.EventHandler(this.miSaveJson_Click);
-            // 
-            // miOpenJson
-            // 
-            this.miOpenJson.Name = "miOpenJson";
-            this.miOpenJson.Size = new System.Drawing.Size(180, 22);
-            this.miOpenJson.Text = "Open Json";
-            this.miOpenJson.Click += new System.EventHandler(this.miOpenJson_Click);
+            this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.оПрограммеToolStripMenuItem.Text = "О программе";
+            this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -206,6 +215,7 @@
         private System.Windows.Forms.CheckBox cboxTrue;
         private System.Windows.Forms.ToolStripMenuItem miSaveJson;
         private System.Windows.Forms.ToolStripMenuItem miOpenJson;
+        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
     }
 }
 

@@ -30,6 +30,7 @@ namespace BelieveOrNotBelieve
         {
             InitializeComponent();
         }
+        
 
         private void miExit_Click(object sender, EventArgs e)
         {
@@ -162,6 +163,12 @@ namespace BelieveOrNotBelieve
                 //throw;
             }
             
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Version ver = new Version();
+            ver.Show();
         }
     }
 }
